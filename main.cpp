@@ -13,6 +13,16 @@
         {'#','#','#'},
     };
 
+void boardState() {
+    // Print the board.
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            std::cout << board[i][j] << " ";
+        };
+        std::cout << std::endl;
+    };
+};
+
 bool validSelectionCheck(int selection) {
     // Check for valid range.
     if( selection > 9 || selection < 0) {
@@ -56,7 +66,7 @@ void select(int selection) {
     };   
 };
 
-// Refactor? O(N^2) sucks
+// Refactor? O(N^2) is slug-ish but not working with large data set
 void checkWin() {
     const char* x = "xxx";
     const char* o = "ooo";
@@ -85,43 +95,36 @@ void checkWin() {
     char* xwin1 = strstr(row2, x);
     char* xwin2 = strstr(row3, x);
     if (xwin || xwin1 || xwin2) {
+         boardState();
          std::cout << "player X has won!" << '\n';
+         playing = false;
     }
     // -- O --
     char* owin = strstr(row1, o);
     char* owin1 = strstr(row2, o);
     char* owin2 = strstr(row3, o);
     if (owin || owin1 || owin2) {
+         boardState();
          std::cout << "player O has won!" << '\n';
+         playing = false;
     }
     // Vertical win
     // Diagonal win
     // Tie
 };
 
-void boardState() {
-    // Print the board.
-    for (int i=0; i<3; i++) {
-        for (int j=0; j<3; j++) {
-            std::cout << board[i][j] << " ";
-        };
-        std::cout << std::endl;
-    };
-};
-
 void gameLoop() {
     while(playing) {
+        boardState();
         std::cout << "Please select a position 1-9 player " << (player ? "x:" : "o:") << '\n';
         std::cin >> selection;
         select(selection);
         checkWin();
         player = !player;
-        boardState();
     };
 };
 
 int main() {
-    boardState();
     std::cout << "Hello!, Welcome to tic-tac-toe." << '\n';
     gameLoop();
     return 0; 
