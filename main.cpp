@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 // STATE & GLOBALS.
     // x is true and o is false.
     bool player = true;
@@ -55,8 +56,10 @@ void select(int selection) {
     };   
 };
 
-// Refactor? Log(0)^2 sucks
+// Refactor? O(N^2) sucks
 void checkWin() {
+    const char* x = "xxx";
+    const char* o = "ooo";
     // Horizontal win.
     char row1[3];
     for (int i=0; i<3; i++) {
@@ -64,21 +67,32 @@ void checkWin() {
             row1[j] = board[0][j];
         };
     };
-    int row2[3];
+    char row2[3];
     for (int i=0; i<3; i++) {
         for (int j=0; j<3; j++) {
             row2[j] = board[1][j];
         };
     };
-    int row3[3];
+    char row3[3];
     for (int i=0; i<3; i++) {
         for (int j=0; j<3; j++) {
             row1[j] = board[2][j];
         };
     };
-    std::cout << row1 << '\n';
-    if (row1 == "xxx") {
-        std::cout << "X won!";
+    // Pattern match check for each row
+    // -- X --
+    char* xwin = strstr(row1, x);
+    char* xwin1 = strstr(row2, x);
+    char* xwin2 = strstr(row3, x);
+    if (xwin || xwin1 || xwin2) {
+         std::cout << "player X has won!" << '\n';
+    }
+    // -- O --
+    char* owin = strstr(row1, o);
+    char* owin1 = strstr(row2, o);
+    char* owin2 = strstr(row3, o);
+    if (owin || owin1 || owin2) {
+         std::cout << "player O has won!" << '\n';
     }
     // Vertical win
     // Diagonal win
