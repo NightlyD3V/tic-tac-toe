@@ -32,6 +32,7 @@ bool validSelectionCheck(int selection) {
     return true;
 };
 
+// Update board with selection.
 void select(int selection) {
     validSelectionCheck(selection);
     switch(selection) {
@@ -109,7 +110,7 @@ void select(int selection) {
     };   
 };
 
-// Refactor? O(N^2) is slug-ish but not working with large data set
+// Refactor? O(N^2) is slug-ish but not working with large data set.
 void checkWin() {
     const char* x = "xxx";
     const char* o = "ooo";
@@ -132,7 +133,7 @@ void checkWin() {
             row3[j] = board[2][j];
         };
     };
-    // Pattern match check for each row (strstr requires null termination)
+    // Pattern match check for each row (strstr requires null termination).
     // -- X --
     char* x_row_win = strstr(row1, x);
     char* x_row_win1 = strstr(row2, x);
@@ -151,12 +152,11 @@ void checkWin() {
         std::cout << "player O has won!" << '\n';
         playing = false;
     }
-    // Vertical win [0][1][1][2][2][3]
-    // Pattern match check for each column (strstr?)
+    // Vertical win [0][1][1][2][2][3].
+    // Pattern match check for each column (strstr?).
     char col1[4];
     for(int i=0; i<3; i++) {
         col1[i] = board[i][0];
-        std::cout << col1[i] << '\n';
     }
     char col2[4];
     for(int i=0; i<3; i++) {
@@ -185,6 +185,33 @@ void checkWin() {
         playing = false;
     }
     // Diagonal win
+    /* {[0][0],[1][1],[2][2] */
+    char diagonal[4];
+    for(int i=0; i<3; i++) {
+        diagonal[i] = board[i][i];
+    }
+    if (strstr(diagonal, x)) {
+        std::cout << "Player X has won!" << '\n';
+        playing = false;
+    }
+    if (strstr(diagonal, o)) {
+        std::cout << "Player O has won!" << '\n';
+        playing = false;
+    }
+
+    char reverse_diag[4];
+    for(int i=3; i>0; i--) {
+        reverse_diag[i] = board[i][i];
+    }
+    if (strstr(reverse_diag, x)) {
+        std::cout << "Player X has won!" << '\n';
+        playing = false;
+    }
+    if (strstr(reverse_diag, o)) {
+        std::cout << "Player O has won!" << '\n';
+        playing = false;
+    }
+
     // Tie
     // if (validSelectionCheck()) {
     //     std::cout << "It's a tie!";
@@ -195,7 +222,7 @@ void checkWin() {
 void gameLoop() {
     while(playing) {
         boardState();
-        std::cout << "Please select a position 1-9 player " << (player ? "x:" : "o:") << '\n';
+        std::cout << "Please select a position 1-9 player: " << (player ? "x" : "o") << '\n';
         std::cin >> selection;
         select(selection);
         checkWin();
