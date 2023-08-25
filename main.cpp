@@ -134,26 +134,62 @@ void checkWin() {
     };
     // Pattern match check for each row (strstr requires null termination)
     // -- X --
-    char* xwin = strstr(row1, x);
-    char* xwin1 = strstr(row2, x);
-    char* xwin2 = strstr(row3, x);
-    if (xwin || xwin1 || xwin2) {
+    char* x_row_win = strstr(row1, x);
+    char* x_row_win1 = strstr(row2, x);
+    char* x_row_win2 = strstr(row3, x);
+    if (x_row_win || x_row_win1 || x_row_win2) {
         boardState();
         std::cout << "player X has won!" << '\n';
         playing = false;
     }
     // -- O --
-    char* owin = strstr(row1, o);
-    char* owin1 = strstr(row2, o);
-    char* owin2 = strstr(row3, o);
-    if (owin || owin1 || owin2) {
+    char* o_row_win = strstr(row1, o);
+    char* o_row_win1 = strstr(row2, o);
+    char* o_row_win2 = strstr(row3, o);
+    if (o_row_win || o_row_win1 || o_row_win2) {
         boardState();
         std::cout << "player O has won!" << '\n';
         playing = false;
     }
     // Vertical win [0][1][1][2][2][3]
+    // Pattern match check for each column (strstr?)
+    char col1[4];
+    for(int i=0; i<3; i++) {
+        col1[i] = board[i][0];
+        std::cout << col1[i] << '\n';
+    }
+    char col2[4];
+    for(int i=0; i<3; i++) {
+        col2[i] = board[i][1];
+    }
+    char col3[4];
+    for(int i=0; i<3; i++) {
+        col3[i] = board[i][2];
+    }
+    // -- X --
+    char* x_col_win = strstr(col1, x);
+    char* x_col_win1 = strstr(col2, x);
+    char* x_col_win2 = strstr(col3, x);
+    if (x_col_win || x_col_win1 || x_col_win2) {
+        boardState();
+        std::cout << "Player X has won!" << '\n';
+        playing = false;
+    }
+    // -- O --
+    char* o_col_win = strstr(col1, o);
+    char* o_col_win1 = strstr(col2, o);
+    char* o_col_win2 = strstr(col3, o);
+    if (o_col_win || o_col_win1 || o_col_win2) {
+        boardState();
+        std::cout << "Player O has won!" << '\n';
+        playing = false;
+    }
     // Diagonal win
     // Tie
+    // if (validSelectionCheck()) {
+    //     std::cout << "It's a tie!";
+    //     playing = false;
+    // }
 };
 
 void gameLoop() {
