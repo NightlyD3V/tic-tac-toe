@@ -110,6 +110,7 @@ void select(int selection) {
     };   
 };
 
+// Win Conditions
 // Refactor? O(N^2) is slug-ish but not working with large data set.
 void checkWin() {
     const char* x = "xxx";
@@ -142,7 +143,7 @@ void checkWin() {
         boardState();
         std::cout << "player X has won!" << '\n';
         playing = false;
-    }
+    };
     // -- O --
     char* o_row_win = strstr(row1, o);
     char* o_row_win1 = strstr(row2, o);
@@ -151,21 +152,21 @@ void checkWin() {
         boardState();
         std::cout << "player O has won!" << '\n';
         playing = false;
-    }
+    };
     // Vertical win [0][1][1][2][2][3].
     // Pattern match check for each column (strstr?).
     char col1[4];
     for(int i=0; i<3; i++) {
         col1[i] = board[i][0];
-    }
+    };
     char col2[4];
     for(int i=0; i<3; i++) {
         col2[i] = board[i][1];
-    }
+    };
     char col3[4];
     for(int i=0; i<3; i++) {
         col3[i] = board[i][2];
-    }
+    };
     // -- X --
     char* x_col_win = strstr(col1, x);
     char* x_col_win1 = strstr(col2, x);
@@ -174,7 +175,7 @@ void checkWin() {
         boardState();
         std::cout << "Player X has won!" << '\n';
         playing = false;
-    }
+    };
     // -- O --
     char* o_col_win = strstr(col1, o);
     char* o_col_win1 = strstr(col2, o);
@@ -183,40 +184,47 @@ void checkWin() {
         boardState();
         std::cout << "Player O has won!" << '\n';
         playing = false;
-    }
+    };
     // Diagonal win
     /* {[0][0],[1][1],[2][2] */
     char diagonal[4];
     for(int i=0; i<3; i++) {
         diagonal[i] = board[i][i];
-    }
+    };
     if (strstr(diagonal, x)) {
         std::cout << "Player X has won!" << '\n';
         playing = false;
-    }
+    };
     if (strstr(diagonal, o)) {
         std::cout << "Player O has won!" << '\n';
         playing = false;
-    }
+    };
 
     char reverse_diag[4];
     for(int i=3; i>0; i--) {
         reverse_diag[i] = board[i][i];
-    }
+    };
     if (strstr(reverse_diag, x)) {
         std::cout << "Player X has won!" << '\n';
         playing = false;
-    }
+    };
     if (strstr(reverse_diag, o)) {
         std::cout << "Player O has won!" << '\n';
         playing = false;
-    }
+    };
 
     // Tie
-    // if (validSelectionCheck()) {
-    //     std::cout << "It's a tie!";
-    //     playing = false;
-    // }
+    int counter = 0;
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            if (board[i][j] == 'x' || board[i][j] == 'o') {
+                counter += 1;
+            }
+            if(counter == 9) {
+                std::cout << "It's a tie!" << '\n';
+            }
+        };
+    };
 };
 
 void gameLoop() {
