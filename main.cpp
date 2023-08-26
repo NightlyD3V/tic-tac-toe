@@ -187,42 +187,47 @@ void checkWin() {
     };
     // Diagonal win
     /* {[0][0],[1][1],[2][2] */
-    char diagonal[4];
+    char diag[4];
     for(int i=0; i<3; i++) {
-        diagonal[i] = board[i][i];
-    };
-    if (strstr(diagonal, x)) {
-        std::cout << "Player X has won!" << '\n';
-        playing = false;
-    };
-    if (strstr(diagonal, o)) {
-        std::cout << "Player O has won!" << '\n';
-        playing = false;
+        diag[i] = board[i][i];
     };
 
     char reverse_diag[4];
-    for(int i=3; i>0; i--) {
-        reverse_diag[i] = board[i][i];
+    for(int i=2; i>=0; i--) {
+        switch(i) {
+            case 2: 
+                reverse_diag[i] = board[i][0];
+                break;
+            case 1:
+                reverse_diag[i] = board[i][1];
+                break;
+            case 0: 
+                reverse_diag[i] = board[i][2];
+                break;
+        }
     };
-    if (strstr(reverse_diag, x)) {
+    if (strstr(diag, x) || strstr(reverse_diag, x)) {
+        boardState();
         std::cout << "Player X has won!" << '\n';
         playing = false;
     };
-    if (strstr(reverse_diag, o)) {
+    if (strstr(diag, o) || strstr(reverse_diag, o)) {
+        boardState(); 
         std::cout << "Player O has won!" << '\n';
         playing = false;
     };
-
+   
     // Tie
     int counter = 0;
     for(int i=0; i<3; i++) {
         for(int j=0; j<3; j++) {
             if (board[i][j] == 'x' || board[i][j] == 'o') {
                 counter += 1;
-            }
-            if(counter == 9) {
+            };
+            if(counter == 9 && playing) {
                 std::cout << "It's a tie!" << '\n';
-            }
+                playing = false;
+            };
         };
     };
 };
