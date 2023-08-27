@@ -1,0 +1,3 @@
+/home/ghost/Code/tic-tac-toe/build/CMakeFiles/tictactoe.dir
+/home/ghost/Code/tic-tac-toe/build/CMakeFiles/edit_cache.dir
+/home/ghost/Code/tic-tac-toe/build/CMakeFiles/rebuild_cache.dir
