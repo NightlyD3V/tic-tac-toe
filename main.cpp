@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include "SDL.h"
+#include "raylib.h"
 // STATE & GLOBALS.
     // x is true and o is false.
     static bool player = true;
@@ -234,7 +234,11 @@ void checkWin() {
 };
 
 void gameLoop() {
-    while(playing) {
+    while(!WindowShouldClose()) {
+        BeginDrawing();
+            ClearBackground(RAYWHITE);
+            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        EndDrawing();
         boardState();
         std::cout << "Please select a position 1-9 player: " << (player ? "x" : "o") << '\n';
         std::cin >> selection;
@@ -242,31 +246,13 @@ void gameLoop() {
         checkWin();
         player = !player;
     };
+    CloseWindow();
+    playing = false;
 };
 
 int main() {
+    InitWindow(800, 450, "raylib [core] example - basic window");
     std::cout << "Hello!, Welcome to tic-tac-toe." << '\n';
-    SDL_Init(SDL_INIT_VIDEO);
-
-    SDL_Window *window = SDL_CreateWindow(
-        "Tic-Tac-Toe",
-        SDL_WINDOWPOS_UNDEFINED,
-        SDL_WINDOWPOS_UNDEFINED,
-        640,
-        480,
-        0
-    );
-
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    SDL_RenderClear(renderer);
-    SDL_RenderPresent(renderer);
-
-    SDL_Delay(3000);
-
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-
     gameLoop();
     return 0; 
 };

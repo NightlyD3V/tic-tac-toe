@@ -537,3 +537,264 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckCCompilerFlag.cmake:40 (cmake_check_compiler_flag)"
+      - "build/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
+      - "build/_deps/raylib-src/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
+      - "build/_deps/raylib-src/CMakeLists.txt:29 (include)"
+    checks:
+      - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake"
+    buildResult:
+      variable: "COMPILER_HAS_THOSE_TOGGLES"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d3d64/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d3d64.dir/build.make CMakeFiles/cmTC_d3d64.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb'
+        Building C object CMakeFiles/cmTC_d3d64.dir/src.c.o
+        /usr/bin/cc -DCOMPILER_HAS_THOSE_TOGGLES  -Werror=pointer-arith -o CMakeFiles/cmTC_d3d64.dir/src.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb/src.c
+        Linking C executable cmTC_d3d64
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3d64.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_d3d64.dir/src.c.o -o cmTC_d3d64 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-LCU4Xb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/raylib-src/src/external/glfw/CMakeLists.txt:64 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0a7b0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0a7b0.dir/build.make CMakeFiles/cmTC_0a7b0.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ'
+        Building C object CMakeFiles/cmTC_0a7b0.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -o CMakeFiles/cmTC_0a7b0.dir/src.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ/src.c
+        Linking C executable cmTC_0a7b0
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a7b0.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -rdynamic CMakeFiles/cmTC_0a7b0.dir/src.c.o -o cmTC_0a7b0 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-tBpxUQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:498 (check_library_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9745a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9745a.dir/build.make CMakeFiles/cmTC_9745a.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph'
+        Building C object CMakeFiles/cmTC_9745a.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -std=gnu99 -o CMakeFiles/cmTC_9745a.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph/CheckFunctionExists.c
+        Linking C executable cmTC_9745a
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9745a.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_9745a.dir/CheckFunctionExists.c.o -o cmTC_9745a  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-p9e2Ph'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:513 (check_function_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4ed3d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ed3d.dir/build.make CMakeFiles/cmTC_4ed3d.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9'
+        Building C object CMakeFiles/cmTC_4ed3d.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname -std=gnu99 -o CMakeFiles/cmTC_4ed3d.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9/CheckFunctionExists.c
+        Linking C executable cmTC_4ed3d
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ed3d.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_4ed3d.dir/CheckFunctionExists.c.o -o cmTC_4ed3d 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-gBCQQ9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:527 (check_function_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_78cf9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_78cf9.dir/build.make CMakeFiles/cmTC_78cf9.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp'
+        Building C object CMakeFiles/cmTC_78cf9.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect -std=gnu99 -o CMakeFiles/cmTC_78cf9.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp/CheckFunctionExists.c
+        Linking C executable cmTC_78cf9
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78cf9.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_78cf9.dir/CheckFunctionExists.c.o -o cmTC_78cf9 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-GZDYjp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:536 (check_function_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18a42/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18a42.dir/build.make CMakeFiles/cmTC_18a42.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U'
+        Building C object CMakeFiles/cmTC_18a42.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove -std=gnu99 -o CMakeFiles/cmTC_18a42.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U/CheckFunctionExists.c
+        Linking C executable cmTC_18a42
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18a42.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_18a42.dir/CheckFunctionExists.c.o -o cmTC_18a42 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-rmx31U'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:545 (check_function_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a8cc9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a8cc9.dir/build.make CMakeFiles/cmTC_a8cc9.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m'
+        Building C object CMakeFiles/cmTC_a8cc9.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat -std=gnu99 -o CMakeFiles/cmTC_a8cc9.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m/CheckFunctionExists.c
+        Linking C executable cmTC_a8cc9
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8cc9.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_a8cc9.dir/CheckFunctionExists.c.o -o cmTC_a8cc9 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-TaHD0m'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/home/ghost/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindX11.cmake:555 (check_library_exists)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:187 (find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL"
+      binary: "/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/cmake;/home/ghost/Code/tic-tac-toe/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL
+        
+        Run Build Command(s):/home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_49b15/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49b15.dir/build.make CMakeFiles/cmTC_49b15.dir/build
+        gmake[1]: Entering directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL'
+        Building C object CMakeFiles/cmTC_49b15.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -std=gnu99 -o CMakeFiles/cmTC_49b15.dir/CheckFunctionExists.c.o -c /home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL/CheckFunctionExists.c
+        Linking C executable cmTC_49b15
+        /home/ghost/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49b15.dir/link.txt --verbose=1
+        /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_49b15.dir/CheckFunctionExists.c.o -o cmTC_49b15  -lICE 
+        gmake[1]: Leaving directory '/home/ghost/Code/tic-tac-toe/build/CMakeFiles/CMakeScratch/TryCompile-iWAwVL'
+        
+      exitCode: 0
+...

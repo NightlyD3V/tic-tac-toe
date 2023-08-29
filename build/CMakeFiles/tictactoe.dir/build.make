@@ -92,6 +92,13 @@ tictactoe_EXTERNAL_OBJECTS =
 
 tictactoe: CMakeFiles/tictactoe.dir/main.cpp.o
 tictactoe: CMakeFiles/tictactoe.dir/build.make
+tictactoe: _deps/raylib-build/raylib/libraylib.a
+tictactoe: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+tictactoe: /usr/lib/x86_64-linux-gnu/libGLX.so
+tictactoe: /usr/lib/x86_64-linux-gnu/libGLU.so
+tictactoe: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+tictactoe: /usr/lib/x86_64-linux-gnu/librt.a
+tictactoe: /usr/lib/x86_64-linux-gnu/libm.so
 tictactoe: CMakeFiles/tictactoe.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ghost/Code/tic-tac-toe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tictactoe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tictactoe.dir/link.txt --verbose=$(VERBOSE)
