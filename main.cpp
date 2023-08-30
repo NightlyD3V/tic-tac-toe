@@ -233,11 +233,19 @@ void checkWin() {
     };
 };
 
-void gameLoop() {
-    while(!WindowShouldClose()) {
+void gameLoop(bool exitWindow, bool exitRequest) {
+    while(!exitWindow) {
+        if (WindowShouldClose() || IsKeyPressed(KEY_ESCAPE)) exitRequest = true;
+        if (exitRequest) {
+            if (IsKeyPressed(KEY_Y)) exitWindow = true;
+            else if (IsKeyPressed(KEY_N)) exitRequest = false;
+        }
         BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        ClearBackground(RAYWHITE);
+            if (exitRequest) {
+                DrawRectangle(0, 100, 450, 200, BLACK);
+                DrawText("Are you sure you want to exit program? [Y/N]", 40, 180, 30, WHITE);
+            } else DrawText("Try to close the window to get confirmation message!", 120, 200, 20, LIGHTGRAY);
         EndDrawing();
         boardState();
         std::cout << "Please select a position 1-9 player: " << (player ? "x" : "o") << '\n';
@@ -252,8 +260,11 @@ void gameLoop() {
 
 int main() {
     InitWindow(800, 450, "raylib [core] example - basic window");
+    // SetTargetFPS(24); 
     std::cout << "Hello!, Welcome to tic-tac-toe." << '\n';
-    gameLoop();
+    bool exitWindow = false;
+    bool exitRequest = false;
+    gameLoop(exitWindow, exitRequest);
     return 0; 
 };
 
