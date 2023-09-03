@@ -14,7 +14,7 @@
 					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.26.4"
+						"string" : "3.22.0"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
