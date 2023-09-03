@@ -234,33 +234,46 @@ void checkWin() {
 };
 
 void gameLoop(bool exitWindow, bool exitRequest) {
+    Vector2 ballPosition = {100, 100};
+    Texture2D cog = LoadTexture("../assets/images/menu.png");
+    Texture2D stella = LoadTexture("../assets/images/stella.png");
+    const float screenWidth = GetScreenWidth();
+    const float screenHeight = GetScreenHeight();
+    // COLORS 
+    Color OIL_WHITE = Color{251,245,239,255};
+    Color OIL_DARKPURPLE = Color{39,39,68,255};
+    
     while(!exitWindow) {
         if (WindowShouldClose() || IsKeyPressed(KEY_ESCAPE)) exitRequest = true;
         if (exitRequest) {
             if (IsKeyPressed(KEY_Y)) exitWindow = true;
             else if (IsKeyPressed(KEY_N)) exitRequest = false;
         }
+        ballPosition = GetMousePosition();
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        DrawCircleV(ballPosition, 25, MAROON);
+        DrawTextureEx(cog,{screenWidth - 50,(screenHeight + 10)-screenHeight},0,1,WHITE);
+        DrawTextureEx(stella, {screenWidth/2, screenHeight/2},0,3,WHITE);
+        ClearBackground(OIL_WHITE);
             if (exitRequest) {
-                DrawRectangle(0, 100, 450, 200, BLACK);
+                DrawRectangle(0, 100, 800, 200, OIL_DARKPURPLE);
                 DrawText("Are you sure you want to exit program? [Y/N]", 40, 180, 30, WHITE);
-            } else DrawText("Try to close the window to get confirmation message!", 120, 200, 20, LIGHTGRAY);
+            } else DrawText("Press any button to begin!", 120, 200, 20, OIL_DARKPURPLE);
         EndDrawing();
-        boardState();
-        std::cout << "Please select a position 1-9 player: " << (player ? "x" : "o") << '\n';
-        std::cin >> selection;
-        select(selection);
-        checkWin();
-        player = !player;
+        // boardState();
+        // std::cout << "Please select a position 1-9 player: " << (player ? "x" : "o") << '\n';
+        // std::cin >> selection;
+        // select(selection);
+        // checkWin();
+        // player = !player;
     };
-    CloseWindow();
-    playing = false;
+    // CloseWindow();
+    // playing = false;
 };
 
 int main() {
-    InitWindow(800, 450, "raylib [core] example - basic window");
-    // SetTargetFPS(24); 
+    InitWindow(800, 450, "Hex");
+    SetTargetFPS(12); 
     std::cout << "Hello!, Welcome to tic-tac-toe." << '\n';
     bool exitWindow = false;
     bool exitRequest = false;
