@@ -272,7 +272,7 @@ void gameLoop(bool exitWindow, bool exitRequest) {
 };
 
 int main() {
-    InitWindow(800, 450, "Hex");
+    InitWindow(800, 450, "Hexy");
     SetTargetFPS(12); 
     std::cout << "Hello!, Welcome to tic-tac-toe." << '\n';
     bool exitWindow = false;
